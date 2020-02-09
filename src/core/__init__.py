@@ -16,6 +16,7 @@ from ..utils.update_checker import check_updates
 from .arguments import get_args
 from .display import (cancel_method, debug_mode, description, epilog,
                       error_message, input_suppression)
+from .app import App
 
 logger = logging.Logger('CORE')
 
@@ -88,3 +89,6 @@ def start_app():
     #     input('Press ENTER to exit...')
     # # end if
 # end def
+
+def start_app_module():
+    return App()
