@@ -53,5 +53,5 @@ def get_novel_info(novel_url):
         raise Exception('Empty chapter list')
     # end if
 
-    return (app.crawler.novel_title, app.crawler.novel_cover, app.crawler.novel_author, app.crawler.chapters, app.crawler.volumes)
+    return {'title': app.crawler.novel_title, 'cover': app.crawler.novel_cover, 'author': app.crawler.novel_author, 'chapters': app.crawler.chapters, 'volumes': app.crawler.volumes}
 # end def
