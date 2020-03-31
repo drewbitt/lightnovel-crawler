@@ -60,9 +60,9 @@ def init():
         os.environ[key] = val[0]
     # end for
 
-    requests.urllib3.disable_warnings(
-        requests.urllib3.exceptions.InsecureRequestWarning)
-    # end if
+    # requests.urllib3.disable_warnings(
+    #     requests.urllib3.exceptions.InsecureRequestWarning)
+    # # end if
 # end def
 
 

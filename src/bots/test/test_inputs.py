@@ -1,7 +1,10 @@
+from base64 import decodestring as b64decode
+
 allowed_failures = [
     'https://ranobelib.me/',
     'https://www.aixdzs.com/',
     'https://webnovelindonesia.com/',
+    b64decode("aHR0cHM6Ly9jb21yYWRlbWFvLmNvbS8=".encode()).decode()
 ]
 
 test_user_inputs = {
@@ -24,9 +27,6 @@ test_user_inputs = {
     'https://boxnovel.com/': [
         'https://boxnovel.com/novel/the-rest-of-my-life-is-for-you/',
         'cultivation chat',
-    ],
-    'https://comrademao.com/': [
-        'https://comrademao.com/novel/against-the-gods/',
     ],
     'https://crescentmoon.blog/': [
         'https://crescentmoon.blog/dark-blue-and-moonlight/',
