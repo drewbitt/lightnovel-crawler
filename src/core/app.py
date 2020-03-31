@@ -75,8 +75,8 @@ class App:
     def search_novel(self):
         '''Requires: user_input, crawler_links'''
         '''Produces: search_results'''
-        logger.info('Searching for novels in %d sites...',
-                    len(self.crawler_links))
+        # logger.info('Searching for novels in %d sites...',
+                    # len(self.crawler_links))
 
         search_novels(self)
 
@@ -84,8 +84,8 @@ class App:
             raise Exception('No results for: %s' % self.user_input)
         # end if
 
-        logger.info('Total %d novels found from %d sites',
-                    len(self.search_results), len(self.crawler_links))
+        # logger.info('Total %d novels found from %d sites',
+        #            len(self.search_results), len(self.crawler_links))
     # end def
 
     # ----------------------------------------------------------------------- #
@@ -124,12 +124,12 @@ class App:
             self.crawler.login(*self.login_data)
         # end if
 
-        print('Retrieving novel info...')
-        print(self.crawler.novel_url)
+        # print('Retrieving novel info...')
+        # print(self.crawler.novel_url)
         self.crawler.read_novel_info()
-        print('NOVEL: %s' % self.crawler.novel_title)
-        print('%d volumes and %d chapters found' %
-              (len(self.crawler.volumes), len(self.crawler.chapters)))
+        # print('NOVEL: %s' % self.crawler.novel_title)
+        # print('%d volumes and %d chapters found' %
+        #      (len(self.crawler.volumes), len(self.crawler.chapters)))
 
         format_novel(self.crawler)
 

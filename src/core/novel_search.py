@@ -81,11 +81,11 @@ def search_novels(app):
         ] = str(crawler)
     # end for
 
-    bar = IncrementalBar('Searching', max=len(futures_to_check.keys()))
-    bar.start()
+    # bar = IncrementalBar('Searching', max=len(futures_to_check.keys()))
+    # bar.start()
 
-    if os.getenv('debug_mode') == 'yes':
-        bar.next = lambda: None  # Hide in debug mode
+    # if os.getenv('debug_mode') == 'yes':
+    #     bar.next = lambda: None  # Hide in debug mode
     # end if
 
     # Resolve future tasks
@@ -94,14 +94,14 @@ def search_novels(app):
     for future in futures.as_completed(futures_to_check):
         combined_results += future.result()
         app.progress += 1
-        bar.next()
+        # bar.next()
     # end for
 
     # Process combined search results
     app.search_results = process_results(combined_results)
-    bar.clearln()
-    bar.finish()
-    print('Found %d results' % len(app.search_results))
+    # bar.clearln()
+    # bar.finish()
+    # print('Found %d results' % len(app.search_results))
 
     executor.shutdown()
 # end def
